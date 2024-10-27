@@ -4,13 +4,16 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Weather sounds</title>
+		<link rel="preload" href="./assets/img/winter-bg.jpg" as="image">
+		<link rel="preload" href="./assets/img/summer-bg.jpg" as="image">
+		<link rel="preload" href="./assets/img/rainy-bg.jpg" as="image">
 	</head>
-	<body>
+	<body class="summer">
 		<main class="main">
 			<h1 class="main-title">Weather sounds</h1>
 			<ul class="weather-list">
 				<li class="weather-item">
-					<button class="weather-button summer">
+					<button class="weather-button summer" data-id="summer" type="button">
                         <svg class="play summer-icon" aria-hidden="true">
                             <use xlink:href="#sun"></use>
                         </svg>
@@ -20,7 +23,7 @@
 					</button>
 				</li>
 				<li class="weather-item">
-					<button class="weather-button autumn">
+					<button class="weather-button autumn" data-id="autumn" type="button">
                         <svg class="play rain-icon" aria-hidden="true">
                             <use xlink:href="#cloud-rain"></use>
                         </svg>
@@ -30,7 +33,7 @@
                     </button>
 				</li>
 				<li class="weather-item">
-					<button class="weather-button winter">
+					<button class="weather-button winter" data-id="winter" type="button">
                         <svg class="play snow-icon" aria-hidden="true">
                             <use xlink:href="#cloud-snow"></use>
                         </svg>
@@ -40,6 +43,10 @@
                     </button>
 				</li>
 			</ul>
+			<div class="volume-bar">
+				<input type="range" id="volume" name="volume" min="0" max="100" />
+			</div>
+			  
 		</main>
 	</body>
 </html>

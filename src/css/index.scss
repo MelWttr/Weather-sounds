@@ -8,7 +8,6 @@ body {
     font-style: normal;
     height: 100vh;
     background-size: cover;
-    background-image: url('../assets/img/summer-bg.jpg');
 }
 
 .main {
@@ -63,5 +62,22 @@ body {
     & .pause {
         width: 48px;
         height: 48px;
+    }
+    &.active {
+        & > .play {
+            display: none;
+        }
+
+        & > .pause {
+            display: block;
+        }
+    }
+}
+
+.volume-bar {
+    margin-top: 20px;
+
+    & input {
+        cursor: pointer;
     }
 }
