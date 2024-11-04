@@ -1,0 +1,13 @@
+{
+  "env": {
+      "browser": true,
+      "es2021": true,
+      "commonjs": true
+  },
+  "parserOptions": {
+      "ecmaVersion": "latest",
+      "sourceType": "module"
+  },
+  "extends": "airbnb-base",
+  "ignorePatterns": ["dist", "webpack.config.common.js", "webpack.config.dev.js", "webpack.config.prod.js"]
+}
