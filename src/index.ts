@@ -11,12 +11,12 @@ const getBackgroundUrl = (key: string): string => `./assets/img/${key}-bg.jpg`;
 const volume: HTMLInputElement = document.querySelector('.volume-bar input') as HTMLInputElement;
 const buttonsList: HTMLElement = document.querySelector('.weather-list') as HTMLElement;
 
-interface Weather {
-	[season: string]: {
+interface WeatherItem {
 		audio: HTMLAudioElement,
 		bg: string
-	}
 }
+
+type Weather = Record<string, WeatherItem>;
 
 const weatherData: Weather = {
 	summer: {
@@ -43,7 +43,8 @@ type handleVolumeChangeType = (event: Event) => void;
 
 const handleButtonsClick: handleButtonsClickType = (evt) => {
 	const {target} = evt;
-	if (target instanceof HTMLElement) {
+	
+	if (target instanceof HTMLElement || target instanceof SVGElement) {
 		const button = target.closest('.weather-button') as HTMLButtonElement;
 		if (!button) {
 			return;
@@ -76,7 +77,9 @@ const handleButtonsClick: handleButtonsClickType = (evt) => {
 
 const handleVolumeChange: handleVolumeChangeType = (evt: Event) => {
 	const target = evt.target as HTMLInputElement;
-	currentAudio.volume = +target.value / 100
+	if (currentAudio) {
+		currentAudio.volume = +target.value / 100
+	}
 };
 
 buttonsList.addEventListener('click', handleButtonsClick);
