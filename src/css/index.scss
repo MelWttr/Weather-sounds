@@ -1,83 +1,90 @@
-@use 'reset';
-@use 'fonts';
+@use "reset";
+@use "fonts";
 
 body {
-    font-family: "Roboto", "Arial", sans-serif;
-    font-size: 15px;
-    font-weight: normal;
-    font-style: normal;
-    height: 100vh;
-    background-size: cover;
+  font-family: "Roboto", "Arial", sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+  font-style: normal;
+  height: 100vh;
+  background-size: cover;
 }
 
 .main {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    backdrop-filter: blur(8px);
-    height: 100%;
-    
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  backdrop-filter: blur(8px);
+  height: 100%;
 }
 
 .weather-list {
-    display: flex;
-    gap: 30px;
+  display: flex;
+  gap: 30px;
 }
 
 .main-title {
-    font-size: 50px;
-    color: rgb(245, 102, 7)
+  font-size: 50px;
+  color: rgb(245, 102, 7);
 }
 
 .weather-button {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: 2px solid rgb(146, 146, 146);
-    border-radius: 50px;
-    width: 200px;
-    height: 200px;
-    background-size: contain;
-    transition: filter 100ms;
-    cursor: pointer;
-    &:hover {
-        filter: blur(0.5px);
-    }
-    &:active {
-        filter: blur(1px);
-    }
-    &.autumn {
-        background-image: url('../assets/img/rainy-bg.jpg');
-    }
-    &.summer {
-        background-image: url('../assets/img/summer-bg.jpg');
-    }
-    &.winter {
-        background-image: url('../assets/img/winter-bg.jpg');
-    }
-    & .pause {
-        display: none;
-    }
-    & .play,
-    & .pause {
-        width: 48px;
-        height: 48px;
-    }
-    &.active {
-        & > .play {
-            display: none;
-        }
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid rgb(146, 146, 146);
+  border-radius: 50px;
+  width: 200px;
+  height: 200px;
+  background-size: contain;
+  transition: filter 100ms;
+  cursor: pointer;
 
-        & > .pause {
-            display: block;
-        }
+  &:hover {
+    filter: blur(0.5px);
+  }
+
+  &:active {
+    filter: blur(1px);
+  }
+
+  &.autumn {
+    background-image: url("../assets/img/rainy-bg.jpg");
+  }
+
+  &.summer {
+    background-image: url("../assets/img/summer-bg.jpg");
+  }
+
+  &.winter {
+    background-image: url("../assets/img/winter-bg.jpg");
+  }
+
+  & .pause {
+    display: none;
+  }
+
+  & .play,
+  & .pause {
+    width: 48px;
+    height: 48px;
+  }
+
+  &.active {
+    & > .play {
+      display: none;
     }
+
+    & > .pause {
+      display: block;
+    }
+  }
 }
 
 .volume-bar {
-    margin-top: 20px;
+  margin-top: 20px;
 
-    & input {
-        cursor: pointer;
-    }
+  & input {
+    cursor: pointer;
+  }
 }

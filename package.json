@@ -6,7 +6,9 @@
   "scripts": {
     "start": "npx webpack serve --config webpack.config.dev.js",
     "build": "npx webpack --config webpack.config.prod.js",
-    "build:dev": "npx webpack --config webpack.config.dev.js"
+    "build:dev": "npx webpack --config webpack.config.dev.js",
+    "lint": "eslint --fix --ext .js .",
+    "stylelint": "stylelint --fix **/*.scss"
   },
   "keywords": [
     "webpack",
