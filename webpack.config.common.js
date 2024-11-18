@@ -6,7 +6,7 @@ const SpriteLoaderPlugin = require('svg-sprite-loader/plugin');
 
 module.exports = {
     context: path.resolve(__dirname, 'src'),
-    entry: './index.js',
+    entry: './index.ts',
     output: {
         filename: '[name].[contenthash].js',
         path: path.resolve(__dirname, 'dist'),
@@ -53,6 +53,11 @@ module.exports = {
             use: [
               { loader: 'svg-sprite-loader'},
             ]
+          },
+          {
+            test: /\.ts?$/,
+            use: 'ts-loader',
+            exclude: /node_modules/,
           }
         ],
       },
